@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta ne="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/bootstrap-select.css">
+
+  <style>
+    body {
+      padding-top: 70px;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="dist/js/bootstrap-select.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+  .alert-icon{
+    font-size: 20px;
+    color: red;
+  }
+
+  .alert-icon2{
+  	font-size: 20px;
+    color: blue;
+    
+  }
+  .alert-success  
+	{
+	background-color:rgba(112, 230, 64, 0.55);
+	}
+  .alert-info{
+  	background:rgba(70, 96, 222, 0.57);
+  }
+  .scrollbar
+{
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+.style-1::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.style-1::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+.style-1::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+.force-overflow
+{
+  min-height: 400px;
+}
+@-moz-document url-prefix() {
+hr {
+    border-style: inset;
+    border-top: 1px yellow;
+    border-bottom: 0px;
+    border-bottom: none;
+    border-left: none;
+    margin: 4px;
+    display: block;
+    height: 1px;
+    clear:both;
+}}
+
+ .alert-info, .alert-success{
+  padding: 10px;
+  border-radius: 10px;
+ }
+ a:hover {
+    text-decoration: none;
+}
+.subject{
+	font-family: initial;
+    font-size: 16px;
+}
+.noresize {
+  resize: none; 
+}
+  </style>
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Conversations</h2>
+  <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+  <div class="row">
+  		<div class="col-sm-3">
+  			<div class="form-group">
+  				<label for="comment">Select Topic:</label>
+  				<select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+          			<option>Topic A</option>
+          			<option>Topic B</option>
+          			<option>Topic C</option>
+            		<option>Topic D</option>
+            		<option>Topic E</option>
+            		<option>Topic F</option>
+        		</select>
+  			</div>
+  		</div>
+  		<div class="col-sm-3">
+  			<div class="form-group">
+  				<label for="comment">Select Sub Topic:</label>
+  				<select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+          			<option>Sub Topic A</option>
+          			<option>Sub Topic B</option>
+          			<option>Sub Topic C</option>
+            		<option>Sub Topic D</option>
+            		<option>Sub Topic E</option>
+            		<option>Sub Topic F</option>
+        		</select>
+  			</div>
+  		</div>
+  		<div class="col-sm-3">
+  			<div class="form-group">
+   			 <label for="comment">Select User:</label>
+          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+              <option>User A</option>
+              <option>User B</option>
+              <option>User C</option>
+              <option>User D</option>
+              <option>User E</option>
+              <option>User G</option>
+              <option>User H</option>
+              <option>User I</option>
+              <option>User J</option>
+              <option>User K</option>
+              <option>User L</option>
+              <option>User M</option>
+          </select>
+        </div>
+  		</div>
+  </div>
+  <div class="row">
+  		<div class="col-sm-9">
+        	<div class="form-group">
+        	<label for="comment">Comment:</label>
+        	<textarea class="form-control noresize" placeholder="Enter your Content" rows="3" id="comment"></textarea>
+      		</div>
+    	</div>
+  </div>
+  <div class="row">
+
+  		<div class="form-group col-sm-4">
+    		<button type="button" class="btn btn-primary">Post</button>
+        	<button type="button" class="btn btn-primary">Clear</button>
+    	</div>
+  </div>
+  <div class="alert row"> 
+    <div class="col-sm-3" style="background-color:lavender;">Created By (System)</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">02:45 </div>
+    <div class="col-sm-3 text-center text-uppercase" style="background-color:lavender;">Tayma</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">Alert</div>
+  <hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	<div class="col-sm-9">
+  		<p class="subject">Tayma is Late by 5 hours.</p>
+  	</div>
+  	<div class="col-sm-3 alert-icon  text-center"><i class="fa fa-bell" aria-hidden="true"></i></div>
+  	<hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	  
+       <div class="col-sm-3">
+  			<a id="commentview1" data-toggle="tooltip" data-placement="top" title="View and Comment">Comment</a>
+  		</div>	
+  		
+      <div class="hidden_reply pull-right" id="viewComment1">
+      	<div class="col-sm-8">
+        <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control noresize" rows="3" id="comment"></textarea>
+      </div>
+    </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="comment">Add User:</label>
+          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+              <option selected="selected" disabled="disabled">User A</option>
+              <option selected="selected" disabled="disabled">User B</option>
+              <option selected="selected" disabled="disabled">User C</option>
+              <option selected="selected" disabled="disabled">User D</option>
+              <option>User E</option>
+              <option>User G</option>
+              <option>User H</option>
+              <option>User I</option>
+              <option>User J</option>
+              <option>User K</option>
+              <option>User L</option>
+              <option>User M</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary">Add Comment</button>
+        <button type="button" class="btn btn-primary">Clear</button>
+
+  </div>
+  		<div class="col-sm-9 pull-right scrollbar style-1">
+  		<hr>
+  		<div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User A</div>
+                <div class="col-sm-3 text-center" style="background-color:lavenderblush;">13:44 </div>
+            </div>
+  			<p class="alert-info">Tayma reached and is in operating. </p><hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">13:04 </div>
+            </div>
+  			<p class="alert-success">Tayma is Late by 5 hours.  </p>
+  			<hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">12:55 </div>
+            </div>
+  			<p class="alert-success">Tayma is Late by 3 hours.</p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">12:44 </div>
+            </div>
+  			<p class="alert-success">Vessel is coming. </p><hr>
+            
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">03:44 </div>
+            </div>
+  			<p class="alert-success">Tayma is Late by 5 hours. </p>
+  		</div>
+	</div>
+
+  </div>
+  
+	<div class="alert row">
+    	 
+    <div class="col-sm-3" style="background-color:lavender;">Created By (User A)</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">05:44 </div>
+    <div class="col-sm-3 text-center" style="background-color:lavender;">CARGO VESSEL</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">Alert</div>
+  <hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	<div class="col-sm-9">
+  		<p class="subject">Cargo Vessel is delay by 5 hours. </p>
+  	</div>
+  	<div class="col-sm-3 alert-icon2 text-center"><i class="fa fa-bell" aria-hidden="true"></i></div>
+  	<hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	  
+       <div class="col-sm-3">
+  			<a id="commentview3" data-toggle="tooltip" data-placement="top" title="View and Comment">Comment</a>
+  		</div>	
+  		
+  		
+
+      <div class="hidden_reply pull-right row" id="viewComment3">
+      	<div class="col-sm-8">
+        <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control noresize" rows="3" id="comment"></textarea>
+      </div>
+    </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="comment">Add User:</label>
+          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+              <option selected="selected" disabled="disabled">User A</option>
+              <option selected="selected" disabled="disabled">User B</option>
+              <option selected="selected" disabled="disabled">User C</option>
+              <option selected="selected" disabled="disabled">User D</option>
+              <option>User E</option>
+              <option>User G</option>
+              <option>User H</option>
+              <option>User I</option>
+              <option>User J</option>
+              <option>User K</option>
+              <option>User L</option>
+              <option>User M</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary">Add Comment</button>
+        <button type="button" class="btn btn-primary">Clear</button>
+
+  </div>
+  		<div class="col-sm-9 pull-right scrollbar style-1">
+  		<hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">15:44 </div>
+            </div>
+  			<p class="alert-success">Cargo Vessel is Delay by 5 hours.  </p>
+  			<hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">13:44 </div>
+            </div>
+  			<p class="alert-success">Cargo Vessel is Delay by 3 hours.</p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">12:42 </div>
+            </div>
+  			<p class="alert-success">Cargo Vessel is coming. </p><hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User A</div>
+                <div class="col-sm-3 text-center" style="background-color:lavenderblush;">08:04 </div>
+            </div>
+  			<p class="alert-info">Cargo Vessel reached and is in operating. </p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">06:14 </div>
+            </div>
+  			<p class="alert-success">Cargo Vessel is delay by 5 hours. </p>
+  		</div>
+	</div>
+  </div>
+
+  <div class="alert row">
+    	 
+    <div class="col-sm-3" style="background-color:lavender;">Created By (User B)</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">01:44 </div>
+    <div class="col-sm-3 text-center" style="background-color:lavender;">AVIVA</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">Alert</div>
+  <hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	<div class="col-sm-9">
+  		<p class="subject">Aviva is Early by 5 hours. </p>
+  	</div>
+  	<div class="col-sm-3 alert-icon2 text-center"><i class="fa fa-bell" aria-hidden="true"></i></div>
+  	<hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	  
+       <div class="col-sm-3">
+  			<a id="commentview4" data-toggle="tooltip" data-placement="top" title="View and Comment">Comment</a>
+  		</div>	
+  		
+      <div class="hidden_reply pull-right" id="viewComment4">
+
+      <div class="col-sm-8">
+        <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control noresize" rows="3" id="comment"></textarea>
+      </div>
+    </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="comment">Add User:</label>
+          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+              <option selected="selected" disabled="disabled">User A</option>
+              <option selected="selected" disabled="disabled">User B</option>
+              <option selected="selected" disabled="disabled">User C</option>
+              <option selected="selected" disabled="disabled">User D</option>
+              <option>User E</option>
+              <option>User G</option>
+              <option>User H</option>
+              <option>User I</option>
+              <option>User J</option>
+              <option>User K</option>
+              <option>User L</option>
+              <option>User M</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary">Add Comment</button>
+        <button type="button" class="btn btn-primary">Clear</button>
+  </div>
+  		<div class="col-sm-9 pull-right scrollbar style-1">
+  		<hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">18:44 </div>
+            </div>
+  			<p class="alert-success">Aviva reached and is in operating. </p>
+  			<hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">17:44 </div>
+            </div>
+  			<p class="alert-success">Aviva is Early by 3 hours.</p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">11:04 </div>
+            </div>
+  			<p class="alert-success">Aviva is coming. </p><hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User A</div>
+                <div class="col-sm-3 text-center" style="background-color:lavenderblush;">09:33 </div>
+            </div>
+  			<p class="alert-info">Aviva is Early by 4 hours. </p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">04:44 </div>
+            </div>
+  			<p class="alert-success">Aviva is Early by 5 hours. </p>
+  		</div>
+	</div>
+  </div>
+   
+  <div class="alert row">
+    	 
+    <div class="col-sm-3" style="background-color:lavender;">Created By (User C)</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">09:44 </div>
+    <div class="col-sm-3 text-center" style="background-color:lavender;">NEW LEVANT</div>
+    <div class="col-sm-3 text-center" style="background-color:lavenderblush;">Alert</div>
+  <hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	<div class="col-sm-9">
+  		<p class="subject">New Levant is Late by 5 hours.</p>
+  	</div>
+  	<div class="col-sm-3 alert-icon2 text-center"><i class="fa fa-bell" aria-hidden="true"></i></div>
+  	<hr style="width: 100%; color: black; height: 0.5px; background-color:black;" />
+  	  
+       <div class="col-sm-3">
+  			<a id="commentview5" data-toggle="tooltip" data-placement="top" title="View and Comment">Comment</a>
+  		</div>	
+  		
+      <div class="hidden_reply pull-right" id="viewComment5">
+      		<div class="col-sm-8">
+        <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control noresize" rows="3" id="comment"></textarea>
+      </div>
+    </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+    <label for="comment">Add User:</label>
+          <select class="selectpicker" multiple data-live-search="true" data-live-search-placeholder="Search" data-actions-box="true">
+              <option selected="selected" disabled="disabled">User A</option>
+              <option selected="selected" disabled="disabled">User B</option>
+              <option selected="selected" disabled="disabled">User C</option>
+              <option selected="selected" disabled="disabled">User D</option>
+              <option>User E</option>
+              <option>User G</option>
+              <option>User H</option>
+              <option>User I</option>
+              <option>User J</option>
+              <option>User K</option>
+              <option>User L</option>
+              <option>User M</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-primary">Add Comment</button>
+        <button type="button" class="btn btn-primary">Clear</button>
+  </div>
+  		<div class="col-sm-9 pull-right scrollbar style-1">
+  		<hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">19:44 </div>
+            </div>
+  			<p class="alert-success">New Levant is Late by 5 hours.  </p>
+  			<hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">18:44 </div>
+            </div>
+  			<p class="alert-success">New Levant is Late by 3 hours.</p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">16:44 </div>
+            </div>
+  			<p class="alert-success">New Levant is coming. </p><hr>
+            <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User A</div>
+                <div class="col-sm-3 text-center" style="background-color:lavenderblush;">11:44 </div>
+            </div>
+  			<p class="alert-info">New Levant reached and is in operating. </p><hr>
+        <div class="col-sm-12">
+              <div class="col-sm-3" style="background-color:lavender;">User B</div>
+              <div class="col-sm-3 text-center" style="background-color:lavenderblush;">10:44 </div>
+            </div>
+  			<p class="alert-success">New Levant is Late by 5 hours. </p>
+  		</div>
+	</div>
+  </div>
+            <div class="text-right col-sm-12">
+                <ul id="pagination-demo" class="pagination-sm"></ul>
+            </div>
+  </div>
+  
+  
+<script src="pagination.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+    $(".hidden_reply").hide();
+     $("#commentview1").click(function(){
+         $("#viewComment1").toggle(500);
+    });
+     $("#commentview2").click(function(){
+         $("#viewComment2").toggle(500);
+    });
+     $("#commentview3").click(function(){
+         $("#viewComment3").toggle(500);
+    });
+     $("#commentview4").click(function(){
+         $("#viewComment4").toggle(500);
+    });
+     $("#commentview5").click(function(){
+         $("#viewComment5").toggle(500);
+    });
+});
+</script>
+<script>
+
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
+  <script>$(document).ready(function () {
+    $('#pagination-demo').twbsPagination({
+        totalPages: "15",
+        visiblePages: "5",
+        onPageClick: function (event, page) {
+            alert(page);
+        }
+    });
+
+    $('#visible-pages-example').twbsPagination({
+        totalPages: 35,
+        visiblePages: 10
+    });
+
+    $('.sync-pagination').twbsPagination({
+        totalPages: 20,
+        onPageClick: function (evt, page) {
+            /*$('#sync-example-page-content').text('Page ' + page);*/
+            alert(page);
+        }
+    });
+});
+</script>
+</body>
+</html>
